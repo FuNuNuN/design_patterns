@@ -1,12 +1,15 @@
 # base_gtest_project
 a simple and basic gtest project
+# env
+```shell
+# init Gtest
+git submodule update --init --recursive
+```
 # Usage
 ```shell
 # project root path
-mkdir build
-cd build
+mkdir build && cd build
 cmake ../
 make -j
-cd test
-./alg_ut
+./test/alg_ut
 ```
