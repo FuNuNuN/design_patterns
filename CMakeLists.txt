@@ -12,7 +12,7 @@ option(BUILD_COVERAGE "build for coverage" OFF)
 message(STATUS "build ${PROJECT_NAME}, is TEST: ${BUILD_TEST}")
 message(STATUS "build ${PROJECT_NAME}, is COVERAGE: ${BUILD_COVERAGE}")
 
-get_filename_component(THIRD_PARTY_DIR ./3rd_party ABSOLUTE)
+get_filename_component(THIRD_PARTY_DIR ./third_party ABSOLUTE)
 get_filename_component(GTEST_INCLUDE ${THIRD_PARTY_DIR}/googletest/googletest/include ABSOLUTE)
 get_filename_component(PROJECT_SRC ./alg ABSOLUTE)
 
