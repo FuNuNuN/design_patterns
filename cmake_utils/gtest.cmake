@@ -1,0 +1,7 @@
+macro(BUILD_GTEST GTEST_DIR)
+    set(BUILD_GMOCK OFF CACHE BOOL "disable gmock")
+    set(gtest_force_shared_crt ON CACHE BOOL "Set gtest to /MD")
+    SET(INSTALL_GTEST OFF CACHE BOOL "disable install")
+    add_subdirectory(${GTEST_DIR} gtest.build)
+    include_directories(${GTEST_DIR}/googletest/include)
+endmacro()
