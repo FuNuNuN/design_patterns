@@ -1,0 +1,13 @@
+macro(INCLUDE_C_SECURE C_SECURE_DIR)
+    include_directories(${C_SECURE_DIR}/include)
+    IF(MSVC)
+        add_definitions(-DSECUREC_USING_STD_SECURE_LIB)
+    ELSE()
+        add_compile_options(-Wno-attributes)
+    ENDIF()
+endmacro()
+
+macro(BUILD_C_SECURE C_SECURE_DIR)
+    INCLUDE_C_SECURE(${C_SECURE_DIR})
+    add_subdirectory(${C_SECURE_DIR} c_sec.build)
+endmacro()
