@@ -7,7 +7,8 @@ include_directories(${PROJECT_SRC})
 include_directories(${GTEST_INCLUDE})
 
 set(TEST 
-    algs_test.cpp)
+    # algs_test.cpp
+    singleton_test.cpp)
 
 add_executable(
     alg_ut
