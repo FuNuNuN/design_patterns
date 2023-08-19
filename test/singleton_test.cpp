@@ -37,10 +37,10 @@ TEST_F(SingleInstanceTest, NormalLazyTest)
             exit(-1);
         }
     }
-
+    sleep(6);
     // 手动释放单实例的资源
     SingleInstanceNormalLazy::deleteInstance();
-    printf("main() : 结束! ");
+    printf("main() : 结束! \n");
 
     EXPECT_EQ(0, 0);
 }

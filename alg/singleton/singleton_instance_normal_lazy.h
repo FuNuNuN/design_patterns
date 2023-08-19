@@ -1,5 +1,6 @@
 ///////////////////  普通懒汉式实现 -- 线程不安全 //////////////////
-#include <mutex> // std::mutex
+#include <mutex>    // std::mutex
+#include <unistd.h> //sleep
 
 class SingleInstanceNormalLazy {
 public:
@@ -32,6 +33,7 @@ SingleInstanceNormalLazy *SingleInstanceNormalLazy::m_SingleInstanceNormalLazy =
 SingleInstanceNormalLazy *SingleInstanceNormalLazy::GetInstance()
 {
     if (m_SingleInstanceNormalLazy == NULL) {
+        sleep(1);
         m_SingleInstanceNormalLazy = new (std::nothrow) SingleInstanceNormalLazy; // 没有加锁是线程不安全的，当线程并发时会创建多个实例
     }
 
