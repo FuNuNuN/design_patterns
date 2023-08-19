@@ -64,7 +64,7 @@ SingleInstanceNormalLazy::~SingleInstanceNormalLazy()
 }
 
 // 线程函数
-void *PrintHello(void *threadid)
+void *SingleInstanceNormalLazyPrintHello(void *threadid)
 {
     // 主线程与子线程分离，两者相互不干涉，子线程结束同时子线程的资源自动回收
     pthread_detach(pthread_self());
